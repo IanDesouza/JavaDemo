@@ -1,0 +1,10 @@
+{
+  "states": {
+    "TN": {
+      "defaultDeductible": 0.02
+    },
+    "TX": {
+      "defaultDeductible": 0.05
+    }
+  }
+}
