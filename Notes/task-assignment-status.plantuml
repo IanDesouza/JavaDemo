@@ -1,0 +1,38 @@
+@startuml
+
+class TaskAssignee {
+    name: String
+}
+class TaskAlgorithm extends TaskAssignee {
+}
+class Employee extends TaskAssignee {
+    employeeId: String
+    firstName: String
+    lastName: String
+    outstandingTaskCount: Integer
+}
+class TaskAssignment {
+    timeAssigned: Timestamp
+    timeStarted: Timestamp
+    timeCompleted: Timestamp
+    status: TaskState
+}
+class Task {
+    id: String
+    name: String
+    desc: String
+    type: TaskType
+    info: JsonObject
+}
+
+class TaskAssigner
+class TaskProducer
+
+Task "1" -- "M" TaskAssignment
+TaskAssignment "M" -- "1" TaskAssignee: open
+TaskAssignment "0..1" -- "1" TaskAssignee: current
+
+TaskProducer -> Task: create
+TaskAssigner -> TaskAssignment: create
+
+@enduml

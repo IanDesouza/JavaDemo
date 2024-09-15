@@ -6,7 +6,9 @@ class Risk {
     yearlyPremium: Money
     ratePremium(): Money
 }
+
 class Car extends Risk
+
 class Home extends Risk
 class InsurancePolicy {
     getPremium(): Money
@@ -21,5 +23,5 @@ Carrier -> InsurancePolicy
 InsurancePolicy -> "M"Risk
 Insured --> "M" Risk : has
 
-
+InsurancePolicy - "M"Car
 @enduml

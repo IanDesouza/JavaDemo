@@ -1,7 +1,9 @@
 package org.a2zsoftware.calculation;
 
+import java.beans.PersistenceDelegate;
 import java.math.BigDecimal;
 import java.math.MathContext;
+import java.util.HashMap;
 
 public class Percentage {
 
@@ -41,4 +43,6 @@ public class Percentage {
     public Percentage divide(double operand) {
         return new Percentage(value / operand);
     }
+
+
 }

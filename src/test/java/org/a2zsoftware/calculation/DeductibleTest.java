@@ -10,6 +10,6 @@ class DeductibleTest {
     void getDeductibleMoney() {
         Deductible deductible = new Deductible(0.02);
         Money deductibleDollars = deductible.getDeductibleMoney(300000);
-        assertEquals(15000, deductibleDollars.doubleValue());
+        assertEquals(6000, deductibleDollars.doubleValue());
     }
 }

@@ -5,8 +5,9 @@ import java.text.NumberFormat;
 
 public class Money {
 
+    private static NumberFormat moneyFormat = NumberFormat.getCurrencyInstance();
+
     private BigDecimal amount;
-    private NumberFormat moneyFormat = NumberFormat.getCurrencyInstance();
 
     public Money(double value) {
         this.amount = new BigDecimal(value);

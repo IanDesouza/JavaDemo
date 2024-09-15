@@ -1,0 +1,15 @@
+@startuml
+
+class TaskProducer extends Runnable
+class TaskConsumer extends Runnable
+class Thread
+class BlockingQueue
+
+Thead --> "1" TaskProducer
+Thead --> "1" TaskConsumer
+TaskProducer -> BlockingQueue
+BlockingQueue -> TaskConsumer
+
+
+
+@enduml

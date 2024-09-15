@@ -1,0 +1,10 @@
+@startuml
+
+[*] -> Assigned
+Assigned -> Started
+Started -> Completed
+Started -> Paused
+Paused -> Started
+Completed -> [*]
+
+@enduml

@@ -9,6 +9,7 @@ class MoneyTest {
     @Test
     void testToString() {
         Money money = new Money(50);
+        System.out.println(money);
         assertEquals("$50.00", money.toString());
     }
 

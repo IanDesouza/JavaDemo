@@ -1,0 +1,23 @@
+@startuml
+
+actor ChatUser
+participant ChatClient
+participant Client
+participant ChatServer
+participant Server
+
+ChatServer -> Server: create(port,consumer)
+hnote over Server: serverSocket
+ChatServer -> Server: waitForConnections
+hnote over Server: loop over\naccept call
+ChatClient -> Client: create
+Client -> Server: connect
+hnote over Server: start thread\nfor consumer
+Server -> ChatServer: accept
+hnote over ChatServer: loop around\nServerRunnable
+ 
+
+ChatUser -> ChatClient
+ChatClient -> Client
+
+@enduml

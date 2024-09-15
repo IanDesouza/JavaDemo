@@ -1,0 +1,37 @@
+@startuml
+
+class Client {
+    socket: Socket
+    getMessage(): String
+    sendMessage(String message): void
+}
+
+class Server{
+    serverSocket: ServerSocket
+    consumer: Consumer<ServerRunnable>
+    waitForConnections(): void
+}
+
+class ChatServer {
+    serverPort: int
+
+}
+
+class ChatClient {
+    waitForResponses(): void
+}
+
+class ServerRunnable {
+    connectedClientSocket: Socket
+    getMessage(): String
+    sendMessage(String message): void
+}
+
+ChatServer "1"-->"1" Server
+Client "1"-->"1" ServerRunnable
+
+Server "1"<-->"M" ServerRunnable
+
+ChatClient "1"-->"1" Client
+
+@enduml
